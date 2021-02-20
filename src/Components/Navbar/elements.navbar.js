@@ -5,7 +5,8 @@ export const Container = styled.nav`
     width: 100%;
     background-color: #1A1A24;
     height: 80px;
-    display: none;
+    z-index: 999;
+    position: fixed;
 `
 
 export const NavbarContainer = styled.div`
@@ -33,7 +34,7 @@ export const NavList = styled.li`
     flex: 1;
     list-style: none;
     & .cta {
-        background-color: #6C63FF;
+        border: 2px solid #6C63FF;
         border-radius: 5px;
     }
 `
