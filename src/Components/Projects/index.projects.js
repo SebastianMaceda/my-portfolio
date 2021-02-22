@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import { Container, Header, HeaderSpan, ProjectsContainer, Column, Row1, RowImg, Row2, RowHeader, RowText, Links, LinkTo, LinkIcon, LinkText } from "./elements.projects";
+import { Container, Header, HeaderSpan, ProjectsContainer, Column, Row1, RowImg, Row2, RowContainer, RowHeader, RowText, Links, LinkTo, LinkIcon, LinkText } from "./elements.projects";
 import { ProjectsData } from './data.projects'
+import { FaGithubSquare, FaLink } from 'react-icons/fa';
 
 export class ProjectsSection extends Component {
     render() {
@@ -23,14 +24,20 @@ export class ProjectsSection extends Component {
                                         <RowImg src={index.imgSrc} />
                                     </Row1>
                                     <Row2>
-                                        <RowHeader></RowHeader>
-                                        <RowText></RowText>
-                                        <Links>
-                                            <LinkTo>
-                                                <LinkIcon></LinkIcon>
-                                                <LinkText></LinkText>
-                                            </LinkTo>
-                                        </Links>
+                                        <RowContainer >
+                                            <RowHeader>{index.title}</RowHeader>
+                                            <RowText>{index.text}</RowText>
+                                            <Links>
+                                                <LinkTo>
+                                                    <FaLink className="faIcon" />
+                                                    <LinkText>{index.extLink}</LinkText>
+                                                </LinkTo>
+                                                <LinkTo>
+                                                    <FaGithubSquare className="faIcon" />
+                                                    <LinkText>{index.gitLink}</LinkText>
+                                                </LinkTo>
+                                            </Links>
+                                        </RowContainer>
                                     </Row2>
                                 </Column>
 
